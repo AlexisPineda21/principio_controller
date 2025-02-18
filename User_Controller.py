@@ -1,10 +1,10 @@
 import sqlite3
 
-# Conexión a la base de datos (Esto NO debería estar en el controlador)
+# Conexión a la base de datos
 conn = sqlite3.connect("users.db")
 cursor = conn.cursor()
 
-# Creamos la tabla si no existe (Esto también es parte del modelo, no del controlador)
+# Creamos la tabla si no existe 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -38,7 +38,7 @@ class UserController:
         self.conn.commit()
         print(f"Usuario con ID {user_id} eliminado.")
 
-# Menú interactivo (Esto debería estar en la capa de presentación, no en el controlador)
+# Menú interactivo 
 if __name__ == "__main__":
     controller = UserController()
     
